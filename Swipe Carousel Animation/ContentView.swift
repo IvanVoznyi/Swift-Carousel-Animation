@@ -13,10 +13,6 @@ struct CarouselItem: View {
     }
 }
 
-class MyState {
-    var currentItem = 0
-}
-
 struct ContentView: View {
     @State private var offset: CGFloat = 0
     let items: [String] = ["NY_1","NY_2", "NY_3", "NY_4", "NY_5", "NY_6", "NY_7", "NY_8", "NY_9"]
