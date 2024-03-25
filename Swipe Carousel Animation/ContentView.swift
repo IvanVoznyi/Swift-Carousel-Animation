@@ -1,11 +1,11 @@
 import SwiftUI
 
 struct CarouselItem: View {
-    let color: String
+    let image: String
     
     var body: some View {
         GeometryReader { geometry in
-            Image(color)
+            Image(image)
                 .resizable()
                 .scaledToFill()
                 .frame(maxHeight: geometry.size.height)
@@ -27,7 +27,7 @@ struct ContentView: View {
         GeometryReader { geometry in
             ZStack {
                 ForEach(items, id: \.self) { item in
-                    CarouselItem(color: item)
+                    CarouselItem(image: item)
                         .frame(width: geometry.size.width)
                         .clipShape(
                             Rectangle()
@@ -42,7 +42,7 @@ struct ContentView: View {
                 HStack(spacing: 0) {
                     ForEach(items, id: \.self) { index in
                         GeometryReader { innerView in
-                            CarouselItem(color: index)
+                            CarouselItem(image: index)
                                 .clipShape(RoundedRectangle(cornerRadius: 10))
                                 .background(
                                     RoundedRectangle(cornerRadius: 10)
